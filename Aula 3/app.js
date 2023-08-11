@@ -13,25 +13,25 @@ var entradaDeDados = readline.createInterface({
 })
 
 entradaDeDados.question('Digite seu nome: ', function(nomeUsuario){
-let nome = nomeUsuario 
+    let nome = nomeUsuario 
 
-entradaDeDados.question('Digite a primeira nota: ', function(primeiraNota){
-    let nota1 = primeiraNota 
-    var n1 = parseInt(nota1)
+    entradaDeDados.question('Digite a primeira nota: ', function(primeiraNota){
+        let nota1 = primeiraNota 
+        var n1 = parseInt(nota1)
 
-    entradaDeDados.question('Digite a segunda nota: ', function(segundaNota){
-        let nota2 = segundaNota 
-        var n2 = parseInt(nota2)
+        entradaDeDados.question('Digite a segunda nota: ', function(segundaNota){
+            let nota2 = segundaNota 
+            var n2 = parseInt(nota2)
 
             entradaDeDados.question('Digite a terceira nota: ', function(terceiraNota){
-            let nota3 = terceiraNota 
-            var n3 = parseInt(nota3)
+                let nota3 = terceiraNota 
+                var n3 = parseInt(nota3)
 
-            entradaDeDados.question('Digite a quarta nota: ', function(quartaNota){
-                let nota4 = quartaNota
-                var n4 = parseInt(nota4)
+                entradaDeDados.question('Digite a quarta nota: ', function(quartaNota){
+                    let nota4 = quartaNota
+                    var n4 = parseInt(nota4)
 
-                var media = (n1 + n2 + n3 + n4)/4 ;
+                    var media = (n1 + n2 + n3 + n4)/4 ;
                 
     console.log('')            
     console.log('A primeira nota é: ' + nota1)
