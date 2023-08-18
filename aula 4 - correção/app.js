@@ -37,33 +37,36 @@ entradaDeDados.question('Digite o primeiro valor: ', function (numero1) {
             //Validação para entrada de dados vazia
             if (valor1 == '' || valor2 == '') {
                 console.log('ERRO: É obrigatório a entrada de valores.')
-            //Validação para entrada de caracteres ao invés de números
-            }else if (isNaN(valor1) || isNaN(valor2)){
+                //Validação para entrada de caracteres ao invés de números
+            } else if (isNaN(valor1) || isNaN(valor2)) {
                 console.log('ERRO: É obrigatório a entrada de valores somente de valores numericos.')
 
-            }else{
+            } else {
                 let resultado
                 valor1 = Number(valor1)
                 valor2 = Number(valor2)
 
-                if(operacao == 'SOMAR')
-                {
+                if (operacao == 'SOMAR')
                     resultado = valor1 + valor2
-                }else if(operacao == 'SUBTRAIR')
-                {
+                else if (operacao == 'SUBTRAIR')
                     resultado = valor1 - valor2
-                }else if(operacao == 'MULTIPLICAR')
-                {
+                else if (operacao == 'MULTIPLICAR')
                     resultado = valor1 * valor2
-                }else if(operacao == 'DIVIDAR')
-                {
-                    resultado = valor1 / valor2
-                }
+                else if (operacao == 'DIVIDIR')
+                    //Validação da divisão por zero                 
+                    if (valor2 == 0)
+                        console.log('ERRO: Não é possível dividir um número por 0')
+                    else
+                        resultado = valor1 / valor2
+                    else 
+                        //Validação de uma operação válida
+                        console.log('ERRO: A operação informada não é válida')
 
-                console.log(resultado)
-                
+                    if(resultado != undefined)
+                        console.log(resultado)
             }
 
+    
         })
     })
 })
