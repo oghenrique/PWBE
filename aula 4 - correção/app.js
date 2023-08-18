@@ -63,7 +63,8 @@ entradaDeDados.question('Digite o primeiro valor: ', function (numero1) {
                         console.log('ERRO: A operação informada não é válida')
 
                     if(resultado != undefined)
-                        console.log(resultado)
+                        //toFixed() - permite especificar a qtde de digitos após a virgula
+                        console.log(resultado.toFixed(2).replace('.', ','))
             }
 
     
