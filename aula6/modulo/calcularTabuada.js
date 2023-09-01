@@ -10,7 +10,7 @@ const gerarTabuada = function (valorTabuada, contadorInicial, contadorFinal) {
 
     //Entradas de dados que vieram pelos argumentos da função 
     let tabuada = valorTabuada
-    let contInicial = contadorFinal
+    let contInicial = contadorInicial
     let contFinal = contadorFinal
 
     let resultado;
@@ -29,13 +29,15 @@ const gerarTabuada = function (valorTabuada, contadorInicial, contadorFinal) {
     else {
 
         //Convertenso String para Number
-        contInicial = Number(contFinal)
+        contInicial = Number(contInicial)
         contFinal = Number(contFinal)
         //Exemplo de While
         while (contInicial <= contFinal) {
             resultado = tabuada * contInicial
             console.log(`${tabuada} x ${contInicial} = ${resultado}`)
-            contInicial += 1
+            contInicial++
         }
     }
 }
+
+gerarTabuada('2' ,'0', '10')
