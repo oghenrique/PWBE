@@ -13,7 +13,8 @@ const gerarTabuada = function (valorTabuada, contadorInicial, contadorFinal) {
     let contInicial = contadorInicial
     let contFinal = contadorFinal
 
-    let resultado;
+    let resultado
+    let status = false
 
     //Validação para deixar os valores em ordem crescente
     if (contFinal < contInicial) {
@@ -36,8 +37,12 @@ const gerarTabuada = function (valorTabuada, contadorInicial, contadorFinal) {
             resultado = tabuada * contInicial
             console.log(`${tabuada} x ${contInicial} = ${resultado}`)
             contInicial++
+            
+            status = true
         }
     }
+
+    return status
 }
 
-gerarTabuada('2' ,'0', '10')
+console.log(gerarTabuada('2' ,'0', '10'))
