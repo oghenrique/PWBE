@@ -24,13 +24,29 @@ var entradaDeDados = readline.createInterface({
     output: process.stdout
 })
 
-entradaDeDados.question('Insira o valor do produto: ', function (precoProduto) {
-    let preco = precoProduto.replace(",", ".")
+entradaDeDados.question('Valor do produto em R$: ', function (precoProduto) {
+    let valor = precoProduto.replace(",", ".")
 
-    entradaDeDados.question('Escolha uma opção de compra: \n1- Á vista com 8% de desconto \n2- Á vista no cartão \n3- Em 2x, preço normal sem juros \n4- Em 4x, preço acrescido de 8% ', function (desconto) {
-        let codigo = desconto;
+    entradaDeDados.question('Escolha uma opção de compra: \n1- Á vista com 8% de desconto \n2- Á vista no cartão \n3- Em 2x, preço normal sem juros \n4- Em 4x, preço acrescido de 8% \n', function (desconto) {
+        let codigo = desconto
 
-
-    })
-})
+        switch (true) {
+            case valor === '' || codigo === '':
+                console.log('ERRO: O CÓDIGO NÃO EXISTE');
+                break;
+            case Number(codigo) > 4 || Number(codigo) < 1:
+                console.log('ERRO: É necessário informar um código entre 1 e 4');
+                break;
+            default:
+                valor = Number(valor);
+                codigo = Number(codigo);
+                let resposta = calculoDesconto.calcular(valor, codigo);
+                console.log(resposta);
+                entradaDeDados.close();
+                break;
+                }
+            }
+        )
+    }
+)
 
