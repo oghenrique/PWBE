@@ -17,7 +17,7 @@ const gerarTabuada = function (valorTabuada, contadorInicial, contadorFinal) {
     let status = false
 
     //Validação para deixar os valores em ordem crescente
-    if (contFinal < contInicial) {
+    if (Number(contFinal) < Number(contInicial)) {
         contInicial = contadorFinal
         contFinal = contadorInicial
     }
@@ -32,12 +32,20 @@ const gerarTabuada = function (valorTabuada, contadorInicial, contadorFinal) {
         //Convertenso String para Number
         contInicial = Number(contInicial)
         contFinal = Number(contFinal)
-        //Exemplo de While
-        while (contInicial <= contFinal) {
+       
+        // //Exemplo de While
+        // while (contInicial <= contFinal) {
+        //     resultado = tabuada * contInicial
+        //     console.log(`${tabuada} x ${contInicial} = ${resultado}`)
+        //     contInicial++
+
+        //     status = true
+        // }
+
+        //Exemplo do FOR
+        for (; contInicial <= contFinal; contInicial++) {
             resultado = tabuada * contInicial
             console.log(`${tabuada} x ${contInicial} = ${resultado}`)
-            contInicial++
-            
             status = true
         }
     }
@@ -45,4 +53,6 @@ const gerarTabuada = function (valorTabuada, contadorInicial, contadorFinal) {
     return status
 }
 
-console.log(gerarTabuada('2' ,'0', '10'))
+module.exports = {
+    gerarTabuada
+}
