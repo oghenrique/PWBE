@@ -26,11 +26,11 @@ function calcularIMC(pesoValor, alturaValor) {
         } else if (imc < 29.9) {
             classificacao = 'Sobrepeso'
         } else if (imc < 34.9) {
-            classificacao = 'Obesidade Grau 1'
+            classificacao = 'Obesidade Grau I'
         } else if (imc < 39.9) {
-            classificacao = 'Obesidade Grau 2'
+            classificacao = 'Obesidade Grau II'
         } else {
-            classificacao = 'Obesidade Grau 3'
+            classificacao = 'Obesidade Grau III'
         }
 
         return `Seu IMC é ${imc.toFixed(2)}. Classificação: ${classificacao}`
