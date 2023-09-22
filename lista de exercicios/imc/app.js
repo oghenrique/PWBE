@@ -5,19 +5,28 @@
  * Versão: 1.0
 **********************************************************************************/
 
-var calculadoraIMC = require('./modulo/calculadoraIMC.js'); // Substitua 'calculadoraIMC.js' pelo nome do seu arquivo
+var calculadoraIMC = require('./modulo/calculoIMC.js')
 
-var readline = require('readline');
+var readline = require('readline')
 
 var entradaDeDados = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-});
+})
 
 entradaDeDados.question('Digite seu peso em KG: ', function (peso) {
+    let pesoValor = peso.replace(',', '.')
     entradaDeDados.question('Digite sua altura em metros: ', function (altura) {
-        var resultado = calculadoraIMC.calcularIMC(peso, altura);
-        console.log(resultado);
-        entradaDeDados.close();
-    });
-});
+        let alturaValor = altura.replace(',', '.')
+
+        entradaDeDados.close()
+
+        if (pesoValor == '' || alturaValor == '') {
+            console.log('ERRO: É obrigatório a entrada de valores.')
+        }
+
+        var resultado = calculadoraIMC.calcularIMC(pesoValor, alturaValor)
+        console.log(resultado)
+
+    })
+})
