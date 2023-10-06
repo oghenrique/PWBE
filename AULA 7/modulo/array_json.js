@@ -89,7 +89,26 @@ const filtrarProduto = function (nomeProduto) {
     return status
 }
 
-console.log(filtrarProduto('mOuSe'))
+const manipulandoArrayJson = function(){
+    /*
+    [] -> Array
+    {} -> JSON
+        Ex: { atributo: valor}
+            {nome: 'josé', telefone: '123456789'}
+    */
 
+            let contato = {nome: 'José da Silva', telefone: '123456789', email: 'jose@gmail.com'}
+            let contato2 = {nome: 'Maria da Silva', telefone: '87654', email: 'maria@gmail.com'}
+            let contato3 = {nome: 'João da Silva', telefone: '76733455', email: 'joao@gmail.com'}
+
+
+            //Criando um array de dados com o JSON
+            let arrayContatos = [contato, contato2, contato3]
+
+
+            console.table(arrayContatos)
+}
+
+manipulandoArrayJson()
 // percorrendoArray()
 // introducaoArray()
