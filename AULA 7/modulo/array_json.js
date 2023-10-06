@@ -130,6 +130,13 @@ const manipulandoArrayJson = function () {
 }
 
 const cadastrarProdutos = function () {
+
+    //Cria o objeto array para guardar todos os produtos
+    let arrayProdutos = []
+    //Cria o objeto Json para colocar o array de produtos
+    let jsonProdutos = {}
+
+
     let listaDeMarcas = [
         { id: 1, nome_marca: 'Dell' },
         { id: 2, nome_marca: 'Apple' },
@@ -155,10 +162,10 @@ const cadastrarProdutos = function () {
 
     let listaDeCores = [
         { id: 1, nome_cor: 'Branco' },
-        { id: 1, nome_cor: 'Preto' },
-        { id: 1, nome_cor: 'Cinza' },
-        { id: 1, nome_cor: 'Vermelho' },
-        { id: 1, nome_cor: 'Azul' }
+        { id: 2, nome_cor: 'Preto' },
+        { id: 3, nome_cor: 'Cinza' },
+        { id: 4, nome_cor: 'Vermelho' },
+        { id: 5, nome_cor: 'Azul' }
     ]
 
     let produto1 = {
@@ -176,8 +183,30 @@ const cadastrarProdutos = function () {
 
             ]
     }
+    let produto2 = {
+        nome: 'Teclado',
+        descricao: 'Teclado muito rápido',
+        qtde: 21,
+        valor: 100.00,
+        marca: listaDeMarcas[4],
+        categoria: listaDeCategorias[0],
+        situacao: listaDeSituacao[1],
+        cor: listaDeCores
+    }
+
+    //Adiciona os produtos em um array de produtos
+    arrayProdutos.push(produto1)
+    arrayProdutos.push(produto2)
+
+    //Adiciona o array com todos os produtos em um JSON
+    jsonProdutos.lista_produtos = arrayProdutos
+    //Retorna a qtde de itens no JSON
+    jsonProdutos.count = arrayProdutos.length
+
+    console.log(jsonProdutos)
 }
 
+cadastrarProdutos()
 // manipulandoArrayJson()
 // percorrendoArray()
 // introducaoArray()
